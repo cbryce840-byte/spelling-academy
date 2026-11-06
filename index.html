@@ -443,7 +443,7 @@
         function selectSentenceTile(word, elementId) {
             userSentenceTiles.push(word);
             const tileBtn = document.getElementById(elementId);
-            if (tileBtn) tileBtn.classList.add('hidden');
+            if (tileBtn) tileBtn.style.display = 'none';
             renderSentenceBuilder();
         }
 
@@ -455,14 +455,14 @@
         function handleScrambleTap(letter, elementId) {
             const placedContainer = document.getElementById('placed-letters');
             const tileBtn = document.getElementById(elementId);
-            if (tileBtn) tileBtn.classList.add('hidden');
+            if (tileBtn) tileBtn.style.display = 'none';
 
             const newTile = document.createElement('button');
             newTile.className = "w-11 h-11 bg-emerald-700 text-white font-black text-xl rounded-xl border-b-4 border-emerald-900 shadow active:scale-95";
             newTile.innerText = letter;
             newTile.onclick = () => {
                 newTile.remove();
-                if (tileBtn) tileBtn.classList.remove('hidden');
+                if (tileBtn) tileBtn.style.display = 'inline-block';
             };
             placedContainer.appendChild(newTile);
         }
